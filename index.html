@@ -1,0 +1,45 @@
+<h2>店頭予約フォーム</h2>
+<label>日付：</label>
+<input type="text" id="dateInput" placeholder="YYYY-MM-DD">
+<button id="calendarBtn">📅</button> <!-- カレンダーアイコンで日付選択 -->
+<label>開始時間：</label>
+<select id="startTime">
+  <option value="10:00">10:00</option>
+  <option value="11:00">11:00</option>
+  ...
+  <option value="18:00">18:00</option>
+</select>
+
+<label>終了時間：</label>
+<select id="endTime">
+  <option value="10:00">10:00</option>
+  <option value="11:00">11:00</option>
+  <option value="12:00">12:00</option>
+  <option value="13:00">13:00</option>
+  <option value="14:00">14:00</option>
+  <option value="15:00">15:00</option>
+  <option value="16:00">16:00</option>
+  <option value="17:00">17:00</option>
+  <option value="18:00">18:00</option>
+</select>
+<label>お客様名：</label>
+<input type="text" id="customerName" placeholder="フルネームでご記入ください">
+
+<label>電話番号：</label>
+<input type="tel" id="phoneNumber" placeholder="ハイフン無しで090xxxxxxxx">
+
+<label>車種：</label>
+<input type="text" id="vehicleModel" placeholder="バイク名・排気量など">
+<label>作業内容：</label>
+<select id="workType">
+  <option value="">選択してください</option>
+  <option value="1ヶ月点検">1ヶ月点検</option>
+  <option value="6ヶ月点検">6ヶ月点検</option>
+  <option value="12ヶ月点検">12ヶ月点検</option>
+  <option value="オイル交換">オイル交換</option>
+  <option value="タイヤ交換">タイヤ交換</option>
+  <option value="その他修理">その他修理</option>
+</select>
+<label>備考：</label>
+<textarea id="note" placeholder="ご要望や事前準備などご記入ください"></textarea>
+<button id="submitBtn">予約を送信する</button>
