@@ -89,3 +89,19 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.date-row {
+  display: flex;
+  gap: 8px;
+}
+
+.date-row input {
+  flex: 1;
+}
+
+#calendarBtn {
+  width: auto;
+  padding: 8px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
