@@ -45,8 +45,8 @@
 
 /* 送信ボタン */
 #submitBtn {
-  margin-top: 20px;
-  padding: 12px 20px;
+  margin-top: 24px;
+  padding: 12px;
   font-size: 1.1rem;
   background-color: #2196F3;
   color: white;
@@ -67,17 +67,19 @@
 }
 
 .form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #fff;
+  width: 100%;
+  max-width: 700px;
+  margin: 40px auto;
   padding: 24px;
+  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
 .form-container h2 {
   font-size: 1.8rem;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
@@ -127,7 +129,7 @@
 
 .form-group label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   font-weight: bold;
 }
 
@@ -135,7 +137,9 @@
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
 }
