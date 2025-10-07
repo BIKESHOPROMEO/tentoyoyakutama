@@ -99,7 +99,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     const fp = flatpickr("#dateInput", {
       dateFormat: "Y-m-d",
-      locale: "ja", // ← これが効くようになる！
+      locale: flatpickr.l10ns.ja,
       allowInput: true
     });
 
