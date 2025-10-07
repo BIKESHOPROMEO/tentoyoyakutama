@@ -14,7 +14,7 @@
 <div class="form-group date-group">
 <label>日付：</label>
 <div class="date-row">
-<input type="text" id="dateInput" placeholder="YYYY-MM-DD">
+<input type="date" id="dateInput" />
 <button id="calendarBtn" type="button">📅</button>
 </div>
 </div>
@@ -87,31 +87,5 @@
 
 <button id="submitBtn">予約を送信する</button>
 </form>
-
-<!-- flatpickr本体 -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-<!-- flatpickr日本語ロケール -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
-
-<!-- flatpickr初期化スクリプト（ロケール読み込み後に実行） -->
-<script>
-  window.addEventListener("load", () => {
-    // flatpickr初期化
-    const fp = flatpickr("#dateInput", {
-      dateFormat: "Y-m-d",
-      locale: flatpickr.l10ns.ja,
-      allowInput: true
-    });
-
-    // カレンダーボタンのイベント
-    const btn = document.getElementById("calendarBtn");
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      fp.open();
-      return false; // ← 念のため追加
-    });
-  });
-</script>
 </body>
 </html>
