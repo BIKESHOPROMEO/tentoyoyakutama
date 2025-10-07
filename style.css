@@ -1,32 +1,15 @@
 /* カレンダーアイコンボタン */
 #calendarBtn {
+  display: block;
+  width: 100%;
   margin-top: 8px;
   padding: 6px 12px;
   font-size: 1rem;
   cursor: pointer;
 }
 
-/* 送信ボタン */
-#submitBtn {
-  margin-top: 24px;
-  padding: 12px;
-  font-size: 1.1rem;
-  background-color: #2196F3;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 100%;
-}
-
 #submitBtn:hover {
   background-color: #1976D2;
-}
-
-/* 備考欄 */
-#reservationForm textarea {
-  height: 80px;
-  resize: vertical;
 }
 
 .form-container {
