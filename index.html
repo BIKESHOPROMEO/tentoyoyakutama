@@ -97,15 +97,19 @@
 <!-- flatpickr初期化スクリプト（ロケール読み込み後に実行） -->
 <script>
   window.addEventListener("load", () => {
+    // flatpickr初期化
     const fp = flatpickr("#dateInput", {
       dateFormat: "Y-m-d",
-      locale: flatpickr.l10ns.ja, // ← ここが効くようになる！
+      locale: flatpickr.l10ns.ja,
       allowInput: true
     });
 
-    document.getElementById("calendarBtn").addEventListener("click", (e) => {
+    // カレンダーボタンのイベント
+    const btn = document.getElementById("calendarBtn");
+    btn.addEventListener("click", (e) => {
       e.preventDefault();
-      fp.open(); // ← これが確実に動く！
+      fp.open();
+      return false; // ← 念のため追加
     });
   });
 </script>
