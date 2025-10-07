@@ -91,21 +91,21 @@
 <!-- flatpickr本体 -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-<!-- 日本語ロケール（flatpickrより後、初期化より前） -->
+<!-- flatpickr日本語ロケール -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
 
-<!-- flatpickr初期化スクリプト -->
+<!-- flatpickr初期化スクリプト（ロケール読み込み後に実行） -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("load", () => {
     const fp = flatpickr("#dateInput", {
       dateFormat: "Y-m-d",
-      locale: flatpickr.l10ns.ja,
+      locale: flatpickr.l10ns.ja, // ← ここが効くようになる！
       allowInput: true
     });
 
     document.getElementById("calendarBtn").addEventListener("click", (e) => {
       e.preventDefault();
-      fp.open();
+      fp.open(); // ← これが確実に動く！
     });
   });
 </script>
