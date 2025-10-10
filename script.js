@@ -1,6 +1,6 @@
 document.getElementById("submitBtn").addEventListener("click", () => {
   const data = {
-    action: "storeReservationMulti", // ← ここがポイント！
+    action: "storeReservation", // ← ここがポイント！
     date: document.getElementById("dateInput").value,
     times: [document.getElementById("startTime").value], // ← 単枠でも配列にしておくと安心
     customer: document.getElementById("customerName").value,
