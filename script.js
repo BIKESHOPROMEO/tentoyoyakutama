@@ -1,15 +1,15 @@
 document.getElementById("submitBtn").addEventListener("click", () => {
   const data = {
-    action: "storeReservation", // ← ここがポイント！
-    date: document.getElementById("dateInput").value,
-    times: [document.getElementById("startTime").value], // ← 単枠でも配列にしておくと安心
-    customer: document.getElementById("customerName").value,
-    phone: document.getElementById("phoneNumber").value,
-    email: "", // ← メール未使用なら空でOK
-    car: document.getElementById("vehicleModel").value,
-    task: document.getElementById("workType").value,
-    note: document.getElementById("note").value,
-  };
+  action: "storeReservation",
+  date: document.getElementById("dateInput").value,
+  times: [document.getElementById("startTime").value],
+  name: document.getElementById("customerName").value,      // ← 修正
+  phone: document.getElementById("phoneNumber").value,
+  email: "",
+  carModel: document.getElementById("vehicleModel").value,  // ← 修正
+  workType: document.getElementById("workType").value,      // ← 修正
+  note: document.getElementById("note").value,
+};
 
   fetch("/api/store-reservation", {
     method: "POST",
