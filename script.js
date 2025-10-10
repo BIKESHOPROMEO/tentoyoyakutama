@@ -1,5 +1,5 @@
 document.getElementById("submitBtn").addEventListener("click", () => {
-  const data = {
+  const payload = {
   action: "storeReservation",
   date: document.getElementById("dateInput").value,
   times: [document.getElementById("startTime").value],
@@ -14,7 +14,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
   fetch("/api/store-reservation", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
+    body: JSON.stringify(payload),
   })
     .then(res => res.json())
     .then(result => {
