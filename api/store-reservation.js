@@ -6,8 +6,6 @@ export default async function handler(req, res) {
     }
 
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwvqxdEp4sWhAACzZRlPe9LzNdNxg2lY5XvIh_uRcfWJHMTnKlFaetKAdwSPdiGzTtwDg/exec";
-
-    // req.bodyが直接JSONオブジェクトとして受け取られるので、そのまま使う
     const data = req.body;
 
     try {
