@@ -1,5 +1,5 @@
-document.getElementById("submitBtn").addEventListener("click", () => {
-const resultEl = document.getElementById('result'); // ← これが必要！
+document.getElementById("submitBtn").addEventListener("click", async () => {
+  const resultEl = document.getElementById('result');
   
 const data = {
   action: "storeReservation",
@@ -44,6 +44,5 @@ const data = {
   }
 
 });
-
 
 
