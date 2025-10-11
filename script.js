@@ -8,7 +8,7 @@ const data = {
   end: document.getElementById("endTime").value,      // ← 追加
   name: document.getElementById("customerName").value,
   phone: document.getElementById("phoneNumber").value,
-  email: "",
+  //email: "",
   carModel: document.getElementById("vehicleModel").value,
   workType: document.getElementById("workType").value,
   note: document.getElementById("note").value,
