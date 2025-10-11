@@ -27,14 +27,13 @@ const data = {
     const msg = await res.json();
     resultEl.textContent = msg.message || '予約不可を登録しました';
     resultEl.style.color = 'green';
-    document.getElementById('date').value = '';
-    document.getElementById('start').value = '10:00';
-    document.getElementById('end').value = '10:00';
-    document.getElementById('name').value = '名前';
-    document.getElementById('phone').value = '09011111111';
-    document.getElementById('email').value = 'email';
-    document.getElementById('carModel').value = 'バイク';
-    document.getElementById('workType').value = '点検';
+    document.getElementById('dateInput').value = '';
+    document.getElementById('startTime').value = '10:00';
+    document.getElementById('endTime').value = '10:00';
+    document.getElementById('customerName').value = '';
+    document.getElementById('phoneNumber').value = '';
+    document.getElementById('vehicleModel').value = '';
+    document.getElementById('workType').value = '';
     document.getElementById('note').value = '';
   } catch (err) {
     console.error('登録エラー:', err);
@@ -45,5 +44,6 @@ const data = {
   }
 
 });
+
 
 
