@@ -1,4 +1,6 @@
 document.getElementById("submitBtn").addEventListener("click", () => {
+const resultEl = document.getElementById('result'); // ← これが必要！
+  
 const data = {
   action: "storeReservation",
   date: document.getElementById("dateInput").value,
@@ -43,4 +45,5 @@ const data = {
   }
 
 });
+
 
