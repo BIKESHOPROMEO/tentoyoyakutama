@@ -18,7 +18,7 @@ const data = {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(data),
     });
 
     if (!res.ok) throw new Error('登録に失敗しました');
@@ -43,3 +43,4 @@ const data = {
   }
 
 });
+
