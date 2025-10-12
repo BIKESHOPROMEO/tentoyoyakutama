@@ -22,7 +22,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     note: document.getElementById("note").value,
   };
 
-  showLoading();
+  
 
   try {
     const res = await fetch('/api/store-reservation', {
@@ -31,7 +31,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
       body: JSON.stringify(data),
     });
 
-    
+    showLoading();
 
     if (!res.ok) throw new Error('登録に失敗しました');
     const msg = await res.json();
