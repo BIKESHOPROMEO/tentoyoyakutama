@@ -1,50 +1,42 @@
 function showLoading() {
-    document.getElementById('loadingOverlay').style.display = 'flex';
-  }
+  document.getElementById('loadingOverlay').style.display = 'flex';
+}
 
-  function hideLoading() {
-    document.getElementById('loadingOverlay').style.display = 'none';
-  }
+function hideLoading() {
+  document.getElementById('loadingOverlay').style.display = 'none';
+}
 
 document.getElementById("submitBtn").addEventListener("click", async () => {
-  
-  const resultEl = document.getElementById('result');  
-  
-const data = {
-  action: "storeReservation",
-  date: document.getElementById("dateInput").value,
-  start: document.getElementById("startTime").value,  // ← 追加
-  end: document.getElementById("endTime").value,      // ← 追加
-  name: document.getElementById("customerName").value,
-  phone: document.getElementById("phoneNumber").value,
-  //email: "",
-  carModel: document.getElementById("vehicleModel").value,
-  workType: document.getElementById("workType").value,
-  note: document.getElementById("note").value,
-};
+  showLoading();
+  const resultEl = document.getElementById('result');
+
+  const data = {
+    action: "storeReservation",
+    date: document.getElementById("dateInput").value,
+    start: document.getElementById("startTime").value,
+    end: document.getElementById("endTime").value,
+    name: document.getElementById("customerName").value,
+    phone: document.getElementById("phoneNumber").value,
+    carModel: document.getElementById("vehicleModel").value,
+    workType: document.getElementById("workType").value,
+    note: document.getElementById("note").value,
+  };
 
   try {
     const res = await fetch('/api/store-reservation', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
-
-    showLoading();
 
     if (!res.ok) throw new Error('登録に失敗しました');
     const msg = await res.json();
 
-    // ✅ 登録完了ダイアログ表示
     const confirmed = window.confirm('登録が完了しました。\nカレンダー画面に戻りますか？');
-
     if (confirmed) {
-      // ✅ カレンダーUIに戻る処理（例：画面切り替え）
-      window.location.href = 'https://calendar-ui-three.vercel.app/'; // ← URL遷移の場合
-      // または、表示領域の切り替えなど
+      window.location.href = 'https://calendar-ui-three.vercel.app/';
     }
+
     resultEl.style.color = 'green';
     document.getElementById('dateInput').value = '';
     document.getElementById('startTime').value = '10:00';
@@ -59,9 +51,6 @@ const data = {
     resultEl.textContent = '登録に失敗しました';
     resultEl.style.color = 'red';
   } finally {
-    hideLoading(); // ← クルクル終了！
+    hideLoading();
   }
-
 });
-
-
