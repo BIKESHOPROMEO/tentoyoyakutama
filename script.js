@@ -1,5 +1,14 @@
 document.getElementById("submitBtn").addEventListener("click", async () => {
+  showLoading();
   const resultEl = document.getElementById('result');
+
+  function showLoading() {
+    document.getElementById('loadingOverlay').style.display = 'flex';
+  }
+
+  function hideLoading() {
+    document.getElementById('loadingOverlay').style.display = 'none';
+  }
   
 const data = {
   action: "storeReservation",
@@ -48,7 +57,7 @@ const data = {
     resultEl.textContent = '登録に失敗しました';
     resultEl.style.color = 'red';
   } finally {
-    //hideLoading(); // ← クルクル終了！
+    hideLoading(); // ← クルクル終了！
   }
 
 });
