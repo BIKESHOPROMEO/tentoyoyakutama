@@ -6,8 +6,9 @@ function hideLoading() {
   document.getElementById('loadingOverlay').style.display = 'none';
 }
 
+window.addEventListener('DOMContentLoaded', () => {
 document.getElementById("submitBtn").addEventListener("click", async () => {
-  
+   showLoading();
   const resultEl = document.getElementById('result');
 
   const data = {
@@ -20,18 +21,14 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     carModel: document.getElementById("vehicleModel").value,
     workType: document.getElementById("workType").value,
     note: document.getElementById("note").value,
-  };
-
-  
+  };  
 
   try {
     const res = await fetch('/api/store-reservation', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
-    });
-
-    showLoading();
+    });   
 
     if (!res.ok) throw new Error('登録に失敗しました');
     const msg = await res.json();
@@ -57,4 +54,5 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
   } finally {
     hideLoading();
   }
+});
 });
