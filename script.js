@@ -1,14 +1,14 @@
-document.getElementById("submitBtn").addEventListener("click", async () => {
-  showLoading();
-  const resultEl = document.getElementById('result');
-
-  function showLoading() {
+function showLoading() {
     document.getElementById('loadingOverlay').style.display = 'flex';
   }
 
   function hideLoading() {
     document.getElementById('loadingOverlay').style.display = 'none';
   }
+
+document.getElementById("submitBtn").addEventListener("click", async () => {
+  showLoading();
+  const resultEl = document.getElementById('result');  
   
 const data = {
   action: "storeReservation",
