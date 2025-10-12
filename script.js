@@ -25,7 +25,15 @@ const data = {
 
     if (!res.ok) throw new Error('登録に失敗しました');
     const msg = await res.json();
-    resultEl.textContent = msg.message || '予約不可を登録しました';
+
+    // ✅ 登録完了ダイアログ表示
+    const confirmed = window.confirm('登録が完了しました。\nカレンダー画面に戻りますか？');
+
+    if (confirmed) {
+      // ✅ カレンダーUIに戻る処理（例：画面切り替え）
+      window.location.href = 'https://calendar-ui-three.vercel.app/'; // ← URL遷移の場合
+      // または、表示領域の切り替えなど
+    }
     resultEl.style.color = 'green';
     document.getElementById('dateInput').value = '';
     document.getElementById('startTime').value = '10:00';
