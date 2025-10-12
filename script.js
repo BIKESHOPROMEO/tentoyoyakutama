@@ -7,7 +7,7 @@ function hideLoading() {
 }
 
 document.getElementById("submitBtn").addEventListener("click", async () => {
-  showLoading();
+  
   const resultEl = document.getElementById('result');
 
   const data = {
@@ -22,12 +22,16 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     note: document.getElementById("note").value,
   };
 
+  showLoading();
+
   try {
     const res = await fetch('/api/store-reservation', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
+
+    
 
     if (!res.ok) throw new Error('登録に失敗しました');
     const msg = await res.json();
