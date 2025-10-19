@@ -18,6 +18,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     end: document.getElementById("endTime").value,
     name: document.getElementById("customerName").value,
     phone: document.getElementById("phoneNumber").value,
+    email: document.getElementById("emailAddress").value,
     carModel: document.getElementById("vehicleModel").value,
     workType: document.getElementById("workType").value,
     note: document.getElementById("note").value,
@@ -44,6 +45,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     document.getElementById('endTime').value = '10:00';
     document.getElementById('customerName').value = '';
     document.getElementById('phoneNumber').value = '';
+    document.getElementById('emailAddress').value = '';
     document.getElementById('vehicleModel').value = '';
     document.getElementById('workType').value = '';
     document.getElementById('note').value = '';
