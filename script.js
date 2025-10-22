@@ -6,6 +6,7 @@ function hideLoading() {
   document.getElementById('loadingOverlay').style.display = 'none';
 }
 
+
 window.addEventListener('DOMContentLoaded', () => {
 document.getElementById("submitBtn").addEventListener("click", async () => {
    showLoading();
@@ -57,4 +58,5 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     hideLoading();
   }
 });
+
 });
