@@ -27,7 +27,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     start: document.getElementById("startTime").value,
     end: document.getElementById("endTime").value,
     name: document.getElementById("customerName").value,
-    phone: document.getElementById("phoneNumber").value,
+    phone: document.getElementById("phoneNumber").value.replace(/-/g, ''),
     email: document.getElementById("emailAddress").value,
     carModel: document.getElementById("vehicleModel").value,
     workType: document.getElementById("workType").value,
