@@ -6,6 +6,15 @@ function hideLoading() {
   document.getElementById('loadingOverlay').style.display = 'none';
 }
 
+function validateReservation(data) {
+  const requiredFields = ['date', 'start', 'end', 'name', 'phone', 'email', 'carModel', 'workType'];
+  for (const field of requiredFields) {
+    if (!data[field] || data[field].trim() === '') {
+      return `「${field}」が未入力です`;
+    }
+  }
+  return null; // 問題なし
+}
 
 window.addEventListener('DOMContentLoaded', () => {
 document.getElementById("submitBtn").addEventListener("click", async () => {
@@ -24,6 +33,14 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     workType: document.getElementById("workType").value,
     note: document.getElementById("note").value,
   };  
+
+  const errorMessage = validateReservation(data);
+    if (errorMessage) {
+      resultEl.textContent = errorMessage;
+      resultEl.style.color = 'red';
+      hideLoading();
+      return; // ← 送信を止める！
+  }
 
   try {
     const res = await fetch('/api/store-reservation', {
@@ -58,5 +75,4 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     hideLoading();
   }
 });
-
 });
