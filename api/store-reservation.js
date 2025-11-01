@@ -4,6 +4,7 @@ export default async function handler(req, res) {
     if (req.method !== "POST") {
         return res.status(405).json({ message: "Method Not Allowed" });
     }
+	
 
     const GAS_URL = "https://script.google.com/macros/s/AKfycbw0xAlekbbME08YaiMQMMB5ngfCDaMEWXicbyU1VlFl8quo1srYmibMD6BPWjdzj_Tb7g/exec";
     const data = req.body;
@@ -33,4 +34,5 @@ export default async function handler(req, res) {
         console.error("Vercel Functionsエラー:", err);
         return res.status(500).json({ message: "Vercel Functionsエラー", error: err.message });
     }
+
 }
